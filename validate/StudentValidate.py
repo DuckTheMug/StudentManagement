@@ -28,3 +28,12 @@ class StudentValidate:
     def checkScore(score: float):
         if (score < 0.0) | (score > 10.0):
             raise ValueError
+
+    @staticmethod
+    def CalculatorSATScore(scoreA: float, scoreB: float, scoreC: float, certification: Certification) -> float:
+        satScore = 1.5 * scoreA + scoreB + scoreC
+        if certification.getCerType() is "ielts":
+            satScore += 1.5
+        elif certification.getCerType() is "toeic":
+            satScore += 1.
+        return satScore
