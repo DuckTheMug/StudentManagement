@@ -144,3 +144,27 @@ class StudentController:
         for stdD in lstStudentD:
             if (stdD.getMathScore() >= 2) & (stdD.getLiteratureScore() >= 2) & (stdD.getEnglishScore() >= 2):
                 print(stdD.__dict__)
+
+    def listScholarship(self, lstStudentC: list, lstStudentD: list):
+        listScore = []
+        for stdt in lstStudentC:
+            listScore.append({'CitizenIdentity': stdt.getCitizenIdentity,
+                              'SATScore': stdt.getSATScore,
+                              'LitScr': stdt.getLitScr(),
+                              'B': stdt.getHistSrc, 'C': stdt.getGeoSrc()}
+                             )
+        for stdt in lstStudentD:
+            listScore.append({'CitizenIdentity': stdt.getCitizenIdentity,
+                              'SATScore': stdt.getSATScore,
+                              'LitScr': stdt.getLiteratureScore(),
+                              'B': stdt.getMathScore, 'C': stdt.getEnglishScore()}
+                             )
+        listScore.sort(reverse=True, key='SATScore')
+        lScholarship = []
+        for stdt in listScore:
+            if (stdt['LitScr'] > 8.) & (stdt['B'] >= 5.) & (stdt['C'] >= 5.):
+                lScholarship.append(stdt['CitizenIdentity'])
+            if len(lScholarship) == 5:
+                break
+        for ci in lScholarship:
+            print(self.findStudentByCitizenIdentity(ci))
