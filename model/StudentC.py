@@ -14,6 +14,7 @@ class StudentC(Student):
         self.__literatureScore = literatureScore
         self.__historyScore = historyScore
         self.__geographyScore = geographyScore
+        self.__satScore = StudentValidate.CalculatorSATScore(literatureScore, historyScore, geographyScore, cert)
 
     # getter & setter
     def setLiteratureScore(self, literatureScore: float):
