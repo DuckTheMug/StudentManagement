@@ -335,26 +335,50 @@ class ManageStudent:
             if (stdD.getMathScore() >= 2) & (stdD.getLiteratureScore() >= 2) & (stdD.getEnglishScore() >= 2):
                 print(stdD.__dict__)
 
-    def listScholarship(self, lstStudentC: list, lstStudentD: list):
+       def listScholarship(self, lstStudentC: list, lstStudentD: list):
         list1 = []
-        for stdt in lstStudentC:
-            list1.append({'CitizenIdentity': stdt.getCitizenIdentity(),
-                          'SATScore': stdt.getSATScore(),
-                          'LitSrc': stdt.getLitSrc(),
-                          'B': stdt.getHistSrc(), 'C': stdt.getGeoSrc()}
-                         )
-        for stdt in lstStudentD:
-            list1.append({'CitizenIdentity': stdt.getCitizenIdentity(),
-                          'SATScore': stdt.getSATScore(),
-                          'LitSrc': stdt.getLiteratureScore(),
-                          'B': stdt.getMathScore(), 'C': stdt.getEnglishScore()}
-                         )
-        list3 = sorted(list1, reverse=True, key=lambda x: 'SATScore')
         list2 = []
-        for stdt in list3:
-            if (stdt['LitSrc'] > 8.0) & (stdt['B'] >= 5.0) & (stdt['C'] >= 5.0):
-                list2.append(stdt['CitizenIdentity'])
+
+        for stdC in lstStudentC:
+            list1.append([stdC.getCitizenIdentity(),stdC.getSATScore(),stdC.getLitSrc(),stdC.getHistSrc(),stdC.getGeoSrc()])
+        for stdD in lstStudentD:
+            list1.append([stdD.getCitizenIdentity(),stdD.getSATScore(), stdD.getLiteratureScore(), stdD.getMathScore(), stdD.getEnglishScore()])
+
+        list1.sort(key=lambda x:x[1], reverse=True)
+           
+        #list2 là danh sách CCCD của tối đa 5 sinh viên có học bổng
+        for stdt in list1:
+            if (stdt[1] > 8.) & (stdt[2] >= 5.) & (stdt[3] >= 5.):
+                list2.append(stdt[0])
             if len(list2) == 5:
                 break
+
+        liststdt = self.getListStudent()
+
+        # Sắp xếp theo thứ tự từ điểm cao đến thấp
+        i = 0
         for ci in list2:
-            print(self.findStudentByCitizenIdentity(ci).__dict__)
+            for stdt in liststdt:
+                if ci == stdt.getCitizenIdentity():
+                    i += 1
+                    print(f"Thí sinh đạt học bổng thứ {i}:\n\t"
+                          f"Tổng số điểm cả 3 môn: {round(stdt.getSATScore(), 2)}\n\t"
+                          f"Số báo danh: {stdt.getCandidateNumber()}\n\t"
+                          f"Họ và tên: {stdt.getName()}\n\t"
+                          f"Căn cước công dân: {stdt.getCitizenIdentity()}\n\t"
+                          f"Địa chỉ: {stdt.getAddress()}\n")
+
+        # Không sắp xếp theo thứ tự từ điểm cao đến thấp
+        # j = 0
+        # for stdt in liststdt:
+        #     if stdt.getCitizenIdentity() in list2:
+        #         j += 1
+        #         print(f"Thí sinh đạt học bổng thứ {j}:\n\t"
+        #               f"Tổng số điểm cả 3 môn: {round(stdt.getSATScore(),2)}\n\t"
+        #               f"Số báo danh: {stdt.getCandidateNumber()}\n\t"
+        #               f"Họ và tên: {stdt.getName()}\n\t"
+        #               f"Căn cước công dân: {stdt.getCitizenIdentity()}\n\t"
+        #               f"Địa chỉ: {stdt.getAddress()}\n")
+
+        import os
+        os.system("pause")
