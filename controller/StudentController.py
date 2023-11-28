@@ -131,7 +131,13 @@ class ManageStudent:
         StudentValidate.checkCitizenIdentity(citizenIdentity)
         student: Student = self.findStudentByCitizenIdentity(citizenIdentity)
         Menu.updateStudentChoice()
-        choice = int(input("Nhập vào lựa chọn: "))
+        while True:
+            try:
+                choice = int(input("Nhập vào lựa chọn: "))
+                break
+            except ValueError:
+                print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                continue
         while choice != 0:
             match choice:
                 case 1:
@@ -146,7 +152,13 @@ class ManageStudent:
                             print('Số CCCD không hợp lệ, vui lòng nhập lại.')
                             continue
                     Menu.updateStudentChoice()
-                    choice = int(input("Nhập vào lựa chọn: "))
+                    while True:
+                        try:
+                            choice = int(input("Nhập vào lựa chọn: "))
+                            break
+                        except ValueError:
+                            print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                            continue
                 case 2:
                     while True:
                         try:
@@ -159,7 +171,13 @@ class ManageStudent:
                             print('SBD không hợp lệ, vui lòng nhập lại.')
                             continue
                     Menu.updateStudentChoice()
-                    choice = int(input("Nhập vào lựa chọn: "))
+                    while True:
+                        try:
+                            choice = int(input("Nhập vào lựa chọn: "))
+                            break
+                        except ValueError:
+                            print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                            continue
                 case 3:
                     while True:
                         try:
@@ -171,7 +189,13 @@ class ManageStudent:
                             print('Họ và tên không hợp lệ, vui lòng nhập lại.')
                             continue
                     Menu.updateStudentChoice()
-                    choice = int(input("Nhập vào lựa chọn: "))
+                    while True:
+                        try:
+                            choice = int(input("Nhập vào lựa chọn: "))
+                            break
+                        except ValueError:
+                            print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                            continue
                 case 4:
                     while True:
                         try:
@@ -184,7 +208,13 @@ class ManageStudent:
                             print('Địa chỉ không hợp lệ, vui lòng nhập lại.')
                             continue
                     Menu.updateStudentChoice()
-                    choice = int(input("Nhập vào lựa chọn: "))
+                    while True:
+                        try:
+                            choice = int(input("Nhập vào lựa chọn: "))
+                            break
+                        except ValueError:
+                            print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                            continue
                 case 5:
                     cert = None
                     has_cert = str(input('Có chứng chỉ tiếng Anh? (y/n): ').lower().strip())
@@ -221,16 +251,28 @@ class ManageStudent:
                             print('Giá trị không hợp lệ, vui lòng nhập lại.')
                             continue
                     Menu.updateStudentChoice()
-                    choice = int(input("Nhập vào lựa chọn: "))
+                    while True:
+                        try:
+                            choice = int(input("Nhập vào lựa chọn: "))
+                            break
+                        except ValueError:
+                            print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                            continue
                 case 6:
                     for num in self.__lstC:
                         if num.getCitizenIdentity() == citizenIdentity:
                             studentC: StudentC = self.findStudentCByCitizenIdentity(citizenIdentity)
-                            choice = int(input("""Nhập vào lựa chọn: 
-                            1. Điểm Văn
-                            2. Điểm Sử
-                            3. Điểm Địa
-                            0. Thoát"""))
+                            while True:
+                                try:
+                                    choice = int(input("""Nhập vào lựa chọn: 
+                                    1. Điểm Văn
+                                    2. Điểm Sử
+                                    3. Điểm Địa
+                                    0. Thoát"""))
+                                    break
+                                except ValueError:
+                                    print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                                    continue
                             while choice != 0:
                                 match choice:
                                     case 1:
@@ -242,19 +284,31 @@ class ManageStudent:
                                     case 3:
                                         geographyScore = float(input("Nhập vào điểm môn Địa lý muốn sửa: "))
                                         studentC.setGeographyScore(geographyScore)
-                                choice = int(input("""Nhập vào lựa chọn: 
-                                                    1. Điểm Văn
-                                                    2. Điểm Sử
-                                                    3. Điểm Địa
-                                                    0. Thoát"""))
+                                while True:
+                                    try:
+                                        choice = int(input("""Nhập vào lựa chọn: 
+                                        1. Điểm Văn
+                                        2. Điểm Sử
+                                        3. Điểm Địa
+                                        0. Thoát"""))
+                                        break
+                                    except ValueError:
+                                        print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                                        continue
                     for num in self.__lstD:
                         if num.getCitizenIdentity() == citizenIdentity:
                             studentD: StudentD = self.findStudentDByCitizenIdentity(citizenIdentity)
-                            choice = int(input("""Nhập vào lựa chọn: 
-                                   1. Điểm Toán
-                                   2. Điểm Văn
-                                   3. Điểm Anh
-                                   0. Thoát"""))
+                            while True:
+                                try:
+                                    choice = int(input("""Nhập vào lựa chọn: 
+                                        1. Điểm Toán
+                                        2. Điểm Văn
+                                        3. Điểm Anh
+                                        0. Thoát"""))
+                                    break
+                                except ValueError:
+                                    print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                                    continue
                             while choice != 0:
                                 match choice:
                                     case 1:
@@ -266,11 +320,17 @@ class ManageStudent:
                                     case 3:
                                         englishScore = float(input("Nhập vào điểm môn Tiếng Anh muốn sửa: "))
                                         studentD.setEnglishScore(englishScore)
-                                choice = int(input("""Nhập vào lựa chọn: 
-                                                    1. Điểm Toán
-                                                    2. Điểm Văn
-                                                    3. Điểm Anh
-                                                    0. Thoát"""))
+                                while True:
+                                    try:
+                                        choice = int(input("""Nhập vào lựa chọn: 
+                                            1. Điểm Toán
+                                            2. Điểm Văn
+                                            3. Điểm Anh
+                                            0. Thoát"""))
+                                        break
+                                    except ValueError:
+                                        print('Lựa chọn không hợp lệ, vui lòng nhập lại.')
+                                        continue
                 case 0:
                     Menu.menuChoice()
 
@@ -288,8 +348,9 @@ class ManageStudent:
         StudentValidate.checkCandidateNumber(candidateNumber)
         for num in self.getListStudent():
             if num.getCandidateNumber() == candidateNumber:
-                print(num.__dict__)
-                break
+                return num
+            elif len(self.getListStudent()) > 0:
+                continue
             else:
                 print("Không tìm thấy thí sinh!")
                 break
@@ -326,7 +387,45 @@ class ManageStudent:
             else:
                 print("Không tìm thấy thí sinh!")
                 break
-            
+
+    # def sortStudentListAscending(self):
+    #     sortStudentListAscending= sorted(self.lst, key=lambda student: self.sum(student), reverse=False)
+    #     for student in sortStudentListAscending:
+    #         print(student.__dict__)
+
+    # def sortStudentListDescending(self):
+    #     sortStudentListDescending= sorted(self.lst, key=lambda student: self.sum(student), reverse=True)
+    #     for student in sortStudentListDescending:
+    #         print(student.__dict__)
+
+    def deleteStudent(self, citizenIdentity: int) : 
+        StudentValidate.checkCitizenIdentity(citizenIdentity)
+        student = self.findStudentByCitizenIdentity(citizenIdentity)
+        if student is not None:
+            print("Thông tin thí sinh cần xoá:")
+            print(f"Tổng số điểm cả 3 môn: {round(student.getSATScore(), 2)}\n\t"
+                    f"Số báo danh: {student.getCandidateNumber()}\n\t"
+                    f"Họ và tên: {student.getName()}\n\t"
+                    f"Căn cước công dân: {student.getCitizenIdentity()}\n\t"
+                    f"Địa chỉ: {student.getAddress()}\n")
+            while True :
+                confirm = str(input("Bạn có chắc chắn muốn xoá thí sinh này? (y/n): ")).lower().strip()
+                try:
+                    if confirm == 'y':
+                        self.getListStudent().remove(student)
+                        print("Đã xoá thí sinh .")
+                        break
+                    elif confirm == 'n':
+                        print("Hủy xoá thí sinh.")
+                        break
+                    else:
+                        raise ValueError
+                except ValueError:
+                        print('Giá trị không hợp lệ, vui lòng nhập lại.')
+                        continue
+        else:
+            print("Không tìm thấy thí sinh với Citizen Identity:", citizenIdentity)
+
     def checkStudentNotFall(self, lstStudentC: list, lstStudentD: list):
         for stdC in lstStudentC:
             if (stdC.getLitSrc() >= 2) & (stdC.getHistSrc() >= 2) & (stdC.getGeoSrc() >= 2):
@@ -335,7 +434,7 @@ class ManageStudent:
             if (stdD.getMathScore() >= 2) & (stdD.getLiteratureScore() >= 2) & (stdD.getEnglishScore() >= 2):
                 print(stdD.__dict__)
 
-       def listScholarship(self, lstStudentC: list, lstStudentD: list):
+    def listScholarship(self, lstStudentC: list, lstStudentD: list):
         list1 = []
         list2 = []
 
