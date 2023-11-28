@@ -398,9 +398,9 @@ class ManageStudent:
     #     for student in sortStudentListDescending:
     #         print(student.__dict__)
 
-    def deleteStudent(self, citizenIdentity: int) : 
-        StudentValidate.checkCitizenIdentity(citizenIdentity)
-        student = self.findStudentByCitizenIdentity(citizenIdentity)
+    def deleteStudent(self, cn: int) : 
+        StudentValidate.checkCandidateNumber(cn)
+        student = self.findStudentByCandidateNumber(cn)
         if student is not None:
             print("Thông tin thí sinh cần xoá:")
             print(f"Tổng số điểm cả 3 môn: {round(student.getSATScore(), 2)}\n\t"
@@ -424,7 +424,7 @@ class ManageStudent:
                         print('Giá trị không hợp lệ, vui lòng nhập lại.')
                         continue
         else:
-            print("Không tìm thấy thí sinh với Citizen Identity:", citizenIdentity)
+            print("Không tìm thấy thí sinh với Citizen Identity:", cn)
 
     def checkStudentNotFall(self, lstStudentC: list, lstStudentD: list):
         for stdC in lstStudentC:
