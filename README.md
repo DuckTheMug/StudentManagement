@@ -22,5 +22,5 @@ pip install -r requirements.txt
 ## Usage
 
 ```sh
-python src/main.py
+python main.py
 ```
