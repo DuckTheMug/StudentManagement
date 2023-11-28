@@ -412,7 +412,10 @@ class ManageStudent:
                 confirm = str(input("Bạn có chắc chắn muốn xoá thí sinh này? (y/n): ")).lower().strip()
                 try:
                     if confirm == 'y':
-                        self.getListStudent().remove(student)
+                        if student.__class__ == StudentC:
+                            self.__lstC.remove(student)
+                        else:
+                            self.__lstD.remove(student)
                         print("Đã xoá thí sinh .")
                         break
                     elif confirm == 'n':
@@ -478,6 +481,3 @@ class ManageStudent:
         #               f"Họ và tên: {stdt.getName()}\n\t"
         #               f"Căn cước công dân: {stdt.getCitizenIdentity()}\n\t"
         #               f"Địa chỉ: {stdt.getAddress()}\n")
-
-        import os
-        os.system("pause")

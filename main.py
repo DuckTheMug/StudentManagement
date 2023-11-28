@@ -34,6 +34,13 @@ class Main:
                 print(controller.findStudentByCitizenIdentity(citizenIdentity).__dict__)
                 Menu.menuChoice()
                 choice = int(input("Nhập lựa chọn của bạn: "))
+            case 5:
+                citizenIdentity = int(input("Nhập SBD thí sinh: "))
+                controller.deleteStudent(citizenIdentity)
+                os.system('pause' if os.name == 'nt' else "/bin/bash -c 'read -s -n 1 -p \"Press any key to continue...\"'")
+                # print(controller.findStudentByCitizenIdentity(citizenIdentity).__dict__)
+                Menu.menuChoice()
+                choice = int(input("Nhập lựa chọn của bạn: "))
             case 8:
                 controller.listScholarship(controller.getListStudentC(),controller.getListStudentD())
                 os.system('pause' if os.name == 'nt' else "/bin/bash -c 'read -s -n 1 -p \"Press any key to continue...\"'")
