@@ -10,7 +10,7 @@ Search for candidates by name, ID, or other criteria.
 Identify candidates who are overdue for the entrance exam and require a review.
 
 ## Sample test cases
-For testing the system, you can use the provided test cases in the TEST_CASES.md file. 
+For testing the system, you can use the provided test cases in the TEST_CASES.csv file. 
 These test cases cover various scenarios such as adding new candidates, searching for candidates, and identifying candidates overdue for the exam.
 
 ## Installing Requirements
