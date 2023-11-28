@@ -1,17 +1,14 @@
 # StudentManagement
 
-## Introduction
-This project implements an Object-Oriented Programming (OOP) system in Python to manage candidates participating in the university entrance exam. 
-The system provides functionality to add new candidates, search for candidates based on various criteria, and handle candidates who are overdue for examination.
+##Introduce
+This project implements an Object Oriented Programming (OOP) system in Python to manage candidates participating in university entrance exams. The system provides the function of adding new candidates, searching for candidates according to different criteria and calculating scores and statistical scores.
 
-## Features
-Add new candidates with detailed information.
-Search for candidates by name, ID, or other criteria.
-Identify candidates who are overdue for the entrance exam and require a review.
+##Featured
+Add new candidates with detailed information. Search candidates by name, ID or other criteria. Calculate admission scores, average scores, score statistics and sort the list by score.
+The program is designed through a command line interface with a function menu with corresponding options to display the program's functions.
 
-## Sample test cases
-For testing the system, you can use the provided test cases in the TEST_CASES.csv file. 
-These test cases cover various scenarios such as adding new candidates, searching for candidates, and identifying candidates overdue for the exam.
+##Sample test cases
+To test the system, you can use the test cases provided in the TEST_CASES.csv file. These test cases include various scenarios such as adding new candidates, searching for candidates, and calculating candidates.
 
 ## Installing Requirements
 
@@ -20,7 +17,11 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
+- Clone the Repository:
+  '''sh
+  git clone https://github.com/DuckTheMug/StudentManagement.git
+  ```
+- Run the program
 ```sh
 python main.py
 ```
