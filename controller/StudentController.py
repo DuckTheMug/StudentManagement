@@ -427,7 +427,7 @@ class ManageStudent:
                         print('Giá trị không hợp lệ, vui lòng nhập lại.')
                         continue
         else:
-            print("Không tìm thấy thí sinh với Citizen Identity:", cn)
+            print("Không tìm thấy thí sinh với SBD: ", cn)
 
     def checkStudentNotFall(self, lstStudentC: list, lstStudentD: list):
         for stdC in lstStudentC:
