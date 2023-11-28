@@ -15,6 +15,7 @@ To test the system, you can use the test cases provided in the TEST_CASES.csv fi
 
 ## Installing Requirements
 <br>
+
 ```pip
 pip install -r requirements.txt
 ```
@@ -22,11 +23,14 @@ pip install -r requirements.txt
 ## Usage
 <br>
 - Clone the Repository:
-  ```sh
-  git clone https://github.com/DuckTheMug/StudentManagement.git
-  ```
+ <br>
+ ```
+ git clone https://github.com/DuckTheMug/StudentManagement.git 
+ ```
+  
+
 - Run the program:
 <br>
-```sh
+```
 python main.py
 ```
