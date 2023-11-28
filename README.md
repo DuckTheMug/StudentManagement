@@ -24,13 +24,13 @@ pip install -r requirements.txt
 <br>
 - Clone the Repository:
  <br>
- ```
+ ```sh
  git clone https://github.com/DuckTheMug/StudentManagement.git 
  ```
   
 
 - Run the program:
 <br>
-```
+```sh
 python main.py
 ```
