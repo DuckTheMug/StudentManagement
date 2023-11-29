@@ -23,7 +23,7 @@ class Student:
     def setAddress(self, address: str):
         self.__address = address
 
-    def setCert(self, cert: Certification):
+    def setCert(self, cert: Certification | None):
         self.__cert = cert
 
     def getCitizenIdentity(self) -> int:
@@ -38,5 +38,5 @@ class Student:
     def getAddress(self) -> str:
         return self.__address
 
-    def getCert(self) -> Certification:
+    def getCert(self) -> Certification | None:
         return self.__cert
