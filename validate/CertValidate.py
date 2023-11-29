@@ -1,7 +1,7 @@
 class CertValidate:
     @staticmethod
     def checkCertType(certType: str):
-        if (certType != 'toeic') | (certType != 'ielts'):
+        if (certType != 'toeic') & (certType != 'ielts'):
             raise ValueError
 
     @staticmethod
